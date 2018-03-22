@@ -178,7 +178,7 @@ public class JavaTypeResolverDefaultImpl implements JavaTypeResolver {
     protected FullyQualifiedJavaType calculateBigDecimalReplacement(IntrospectedColumn column, FullyQualifiedJavaType defaultType) {
         FullyQualifiedJavaType answer;
 
-        if (column.getScale() > 0 || column.getLength() > 18 || forceBigDecimals) {
+        if (column.getScale() > 0 || column.getLength() > 20 || forceBigDecimals) {
             answer = defaultType;
         } else if (column.getLength() > 9) {
             answer = new FullyQualifiedJavaType(Long.class.getName());
